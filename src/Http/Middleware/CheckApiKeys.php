@@ -15,15 +15,17 @@ class CheckApiKeys
         $key = $request->header('x-api-key');
         $secret = $request->header('x-api-secret');
 
-        $apiKey = ApiKey
+        $apiKeyRecord = ApiKey
             ::where('key', $key)
             ->where('secret', $secret)
             ->whereDate('expires_at', '>', now())
             ->first();
 
-        if (!$apiKey) {
+        if (!$apiKeyRecord) {
             return response()->json(['error' => 'Invalid API keys'], 401);
         }
+
+        $request->attributes->set('apiKeyRecord', $apiKeyRecord);
 
         return $next($request);
     }
