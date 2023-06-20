@@ -16,7 +16,6 @@
     "autoload": {
         "psr-4": {
             "ReesMcIvor\\ApiAuth\\": "src/",
-            "ReesMcIvor\\ApiAuth\\Database\\Factories\\": "database/factories/"
         }
     },
     "extra": {

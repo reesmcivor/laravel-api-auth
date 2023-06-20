@@ -4,7 +4,7 @@ namespace ReesMcIvor\ApiAuth\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use ReesMcIvor\AuthApi\Database\Factories\ApiKeyFactory;
+use ReesMcIvor\ApiAuth\Factories\ApiKeyFactory;
 
 class ApiKey extends Model
 {

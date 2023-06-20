@@ -1,6 +1,6 @@
 <?php
 
-namespace ReesMcIvor\ApiAuth\Database\Factories;
+namespace ReesMcIvor\ApiAuth\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -13,8 +13,9 @@ class ApiKeyFactory extends Factory
     public function definition(): array
     {
         return [
-            'key' => Str::Str::random(40),
-            'secret' => Str::Str::random(40),
+            'key' => Str::random(40),
+            'secret' => Str::random(40),
+            'expires_at' => now()->addYear(),
         ];
     }
 }
